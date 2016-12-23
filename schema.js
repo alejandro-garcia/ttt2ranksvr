@@ -14,19 +14,19 @@ var peleadoresSchema = new Schema(
   {
   	_id: Schema.Types.ObjectId,  	
   	charId: { type: Number, index: true },
-  	name: { type: String },
+  	name: String,
   	rankPoints: { type: Number},
-  	image: { type: String} ,
-  	shortname: { type: String},
-  	abbreviation: { type: String}
+  	image: String ,
+  	shortname: String,
+  	abbreviation: String
   }
 );
 
 var rivalesSchema = new Schema(
   {
-  	_id: Schema.Types.ObjectId,  	
+  	//_id: Schema.Types.ObjectId,  	
   	rivalId: { type: Number, index: true },
-  	psn: { type: String},
+  	psn: String,
   	rank1id: { type: Number},
   	rank2id: { type: Number},
   	char1Id: { type: Number},
@@ -36,24 +36,48 @@ var rivalesSchema = new Schema(
 
 var rangosSchema = new Schema(
 	 {
-	 	_id: Schema.Types.ObjectId,
+	 	//_id: Schema.Types.ObjectId,
 	 	rankId: { type: Number, index: true },
-	 	nombre: { type: String },
+	 	nombre: String,
 	 	orden: { type: Number},
-	 	category: { type: String}, 
-	 	abbreviation: { type: String }
+	 	category: String, 
+	 	abbreviation: String
 	 }
 );
 
-var Peleadores = mongoose.model('Peleadores', peleadoresSchema);
-var Rivales = mongoose.model('Rivales', rivalesSchema);
-var Rangos = mongoose.model('Rangos', rangosSchema);
+var Peleadores = mongoose.model('peleadores', peleadoresSchema);
+var Rivales = mongoose.model('rivales', rivalesSchema);
+var Rangos = mongoose.model('rangos', rangosSchema);
+//var Test = mongoose.model('tests', new Schema({ id: {type: Number}, title: String }));
 
-// mongoose.connect(process.env.COMPOSE_URI || COMPOSE_URI_DEFAULT, function (error) {
-//   if (error) console.error(error)
-//   else console.log('mongo connected')
-// })
+var COMPOSE_URI_DEFAULT = "mongodb://localhost/ttt2ranks";
 
+mongoose.connect(process.env.COMPOSE_URI || COMPOSE_URI_DEFAULT, function (error) {
+   if (error) {
+     console.error(error)
+   }
+   else { 
+     console.log('schema.js -- mongo connected')
+
+    //  console.log ("probando query contra mongoose");
+     
+    //  Rangos.find({}, (err, listado)=>{
+    //     if (err)
+    //       console.log("error: " + err);
+    //     else {
+    //       console.log("resultado consulta...");
+    //       console.log(JSON.stringify(listado));
+    //     }
+    //  });
+
+    //  var newTest = new Test({ id: 2, title: "prueba 2"});
+    //  newTest.save(function (err) {
+    //      if (err) 
+    //        console.log ('Error on save!'); 
+    //      else  console.log('Se creo el registro 2');  
+    //  });
+   }
+})
 
 var PeleadorType = new GraphQLObjectType({
   name: 'peleador',
