@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
       "mongoose": "^4.7.4",
+      "babel": "^5.8.23",
       "express": "^4.14.0",
       "method-override": "^2.1.2",
       "body-parser": "^1.5.1",

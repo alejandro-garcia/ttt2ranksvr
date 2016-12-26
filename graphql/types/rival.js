@@ -10,7 +10,7 @@ export default new GraphQLObjectType({
   name: 'Rival',
   fields: () => ({
     rivalId: {
-      type: GraphQLID,
+      type: GraphQLInt,
       description: 'Rival id'
     },
     psn: {

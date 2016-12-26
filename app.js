@@ -10,6 +10,9 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 import schema from './graphql';
+import fighter from './models/fighter';
+
+//var graphql = require('graphql').graphql;
 
 var app = express();
 
@@ -20,13 +23,36 @@ app.use('/graphql', graphqlHTTP(req => ({
   graphiql: true
 })));
 
+console.log("estableciendo conexion con mongodb");
 
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/ttt2ranks', function(err, res) {  
    if(err) {
      console.log('ERROR: connecting to Database. ' + err);
    }
    else {
        console.log('app.js -- mongo connected');
+
+        console.log ("probando query contra mongoose");
+     
+        debugger;
+       fighter.find({abbreviation: "ale"}, (err, listado)=>{
+           if (err)
+            console.log("error: " + err);
+          else {
+            console.log("resultado consulta...");
+            console.log(JSON.stringify(listado));
+          }
+        });
+
+
+      //  var query = 'query { fighters { charId, name } }';
+        
+      //  console.log ("probando query graphql...");
+        
+      //  graphql(schema, query).then( function(result) {  
+      //    console.log(JSON.stringify(result,null," "));
+      //  });
    }
 });
 

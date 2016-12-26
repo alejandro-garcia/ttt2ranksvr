@@ -2,6 +2,7 @@ import {
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLString,
+  GraphQLInt,
   GraphQLFloat,
   GraphQLID
 } from 'graphql';
@@ -10,7 +11,7 @@ export default new GraphQLObjectType({
   name: 'Fighter',
   fields: () => ({
     charId: {
-      type: GraphQLID,
+      type: GraphQLInt,
       description: 'Peleador id'
     },
     name: {

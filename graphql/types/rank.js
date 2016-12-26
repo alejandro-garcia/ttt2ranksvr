@@ -11,7 +11,7 @@ export default new GraphQLObjectType({
   name: 'Rank',
   fields: () => ({
     rankId: {
-      type: GraphQLID,
+      type: GraphQLInt,
       description: 'Rank id'
     },
     nombre: {
