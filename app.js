@@ -11,13 +11,16 @@ import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 import schema from './graphql';
 import fighter from './models/fighter';
+const cors = require('cors');
 
 //var graphql = require('graphql').graphql;
 
 var app = express();
 
+app.options('/graphql', cors());
+
 // GraphqQL server route
-app.use('/graphql', graphqlHTTP(req => ({
+app.use('/graphql', cors(), graphqlHTTP(req => ({
   schema,
   pretty: true,
   graphiql: true

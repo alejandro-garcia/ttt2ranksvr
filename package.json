@@ -4,13 +4,15 @@
   "description": "Servicio Express Mongo GraphQL",
   "main": "index.js",
   "dependencies": {
-      "mongoose": "^4.7.4",
-      "babel": "^5.8.23",
-      "express": "^4.14.0",
-      "method-override": "^2.1.2",
-      "body-parser": "^1.5.1",
-      "graphql": "^0.8.2",
-      "express-graphql": "^0.6.1"
+    "babel": "^5.8.23",
+    "body-parser": "^1.5.1",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-graphql": "^0.6.1",
+    "graphql": "^0.8.2",
+    "graphql-date": "^1.0.2",
+    "method-override": "^2.1.2",
+    "mongoose": "^4.7.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
