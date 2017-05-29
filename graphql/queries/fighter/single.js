@@ -22,6 +22,7 @@ export default {
   },
   resolve (root, params, source, fieldASTs) {
     const projection = getProjection(fieldASTs);
+    debugger;    
 
     return fighterModel.findOne().where({charId: params.id}).select(projection).exec();
 

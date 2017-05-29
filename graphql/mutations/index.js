@@ -1,4 +1,6 @@
+import fight from './fight';
 import rival from './rival';
 export default {
-  ...rival 
+  ...fight,
+  ...rival  
 };

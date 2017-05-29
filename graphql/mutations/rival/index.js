@@ -1,4 +1,4 @@
-import Add from './add';
+import AddRival from './add';
 export default {
-    Add
+    AddRival
 }

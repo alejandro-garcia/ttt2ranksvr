@@ -7,11 +7,11 @@ import {
   GraphQLObjectType
 } from 'graphql';
 
-import rivalType from '../types/rival';
+import rivalType from '../../types/rival';
 import {Types} from 'mongoose';
 
 //import getProjection from '../../get-projection';
-import Rival from '../../models/rival';
+import Rival from '../../../models/rival';
 
 //var RivalAdd = {
 export default {

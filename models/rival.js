@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
+mongoose.set('debug', true);
+
 var rivalSchema = new mongoose.Schema({
-  	//_id: Schema.Types.ObjectId,  	
+  	_id: mongoose.Schema.Types.ObjectId,  	
   	rivalId: { type: Number, index: true },
   	psn: String,
   	rank1id: { type: Number},
@@ -10,4 +12,4 @@ var rivalSchema = new mongoose.Schema({
   	char2Id: { type: Number}
 });
 
-export default mongoose.model('Rival', rivalSchema);
+export default mongoose.model('rival', rivalSchema);

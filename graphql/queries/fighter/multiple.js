@@ -10,7 +10,7 @@ export default {
   type: new GraphQLList(fighterType),
   args: {},
   resolve (root, params, source, fieldASTs) {
-    debugger;
+    //debugger;
     //const projection = getProjection(options.fieldASTs[0]);
 
     const projection = getProjection(fieldASTs);
